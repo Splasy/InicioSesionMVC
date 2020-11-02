@@ -3,8 +3,6 @@ package dad.javafx.iniciosesion;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -22,8 +20,6 @@ public class View extends VBox {
 	private PasswordField passText;
 	private Button accederButton;
 	private Button cancelarButton;
-	private Alert infoAlert = new Alert(AlertType.INFORMATION);
-	private Alert errorAlert = new Alert(AlertType.ERROR);
 	
 	public View() {
 		super();
@@ -38,15 +34,10 @@ public class View extends VBox {
 		passText.setPromptText("Contraseña");
 		
 		accederButton = new Button("Acceder");
+		accederButton.setDefaultButton(true);
 		cancelarButton = new Button("Cancelar");
 		
-		infoAlert.setTitle("Iniciar sesión");
-		infoAlert.setHeaderText("Acceso permitido.");
-		infoAlert.setContentText("Las credenciales de acceso son válidas.");
 		
-		errorAlert.setTitle("Iniciar sesión");
-		errorAlert.setHeaderText("Acceso denegado.");
-		errorAlert.setContentText("El usuario y/o la contraseña no son válidos.");
 		
 		HBox botonBox = new HBox();
 		botonBox.setSpacing(10);
